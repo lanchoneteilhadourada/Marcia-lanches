@@ -30,6 +30,7 @@ body {
 img {
     display: block;
     width: 100%;
+    max-width: 100%;
 }
 
 a {
@@ -61,6 +62,7 @@ button {
 
     --black: #171717;
     --dark: #252525;
+
     --gray-dark: #555;
     --gray: #777;
     --gray-light: #f5f5f5;
@@ -82,6 +84,8 @@ button {
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    width: 100%;
 
     background: rgba(255, 255, 255, 0.96);
 
@@ -106,6 +110,7 @@ button {
 .logo {
     display: flex;
     align-items: center;
+
     gap: 10px;
 
     font-family: "Montserrat", sans-serif;
@@ -127,6 +132,8 @@ button {
     align-items: center;
     justify-content: center;
 
+    flex-shrink: 0;
+
     background: var(--red);
     color: white;
 
@@ -141,6 +148,7 @@ button {
 .nav {
     display: flex;
     align-items: center;
+
     gap: 25px;
 }
 
@@ -159,6 +167,7 @@ button {
     content: "";
 
     position: absolute;
+
     left: 0;
     bottom: -7px;
 
@@ -184,6 +193,7 @@ button {
 .nav-whatsapp {
     display: flex;
     align-items: center;
+
     gap: 8px;
 
     padding: 11px 17px;
@@ -201,7 +211,9 @@ button {
 
 .nav-whatsapp:hover {
     background: var(--red-dark);
+
     transform: translateY(-2px);
+
     box-shadow: 0 8px 20px rgba(230, 57, 70, 0.25);
 }
 
@@ -213,6 +225,9 @@ button {
 
     width: 42px;
     height: 42px;
+
+    align-items: center;
+    justify-content: center;
 
     border: none;
     border-radius: 10px;
@@ -278,15 +293,20 @@ button {
 
     position: relative;
     z-index: 2;
+
+    min-width: 0;
 }
 
 
-/* HERO TEXT */
+/* HERO TEXTO */
 
 .rating-badge {
     display: inline-flex;
     align-items: center;
+
     gap: 12px;
+
+    max-width: 100%;
 
     padding: 8px 14px;
 
@@ -340,10 +360,15 @@ button {
     color: var(--black);
 
     margin-bottom: 20px;
+
+    max-width: 100%;
+
+    overflow-wrap: break-word;
 }
 
 .hero h1 span {
     display: block;
+
     color: var(--red);
 }
 
@@ -355,6 +380,8 @@ button {
     color: #333;
 
     margin-bottom: 15px;
+
+    overflow-wrap: break-word;
 }
 
 .hero-description {
@@ -365,6 +392,8 @@ button {
     font-size: 16px;
 
     margin-bottom: 30px;
+
+    overflow-wrap: break-word;
 }
 
 
@@ -397,6 +426,8 @@ button {
     transition: 0.3s;
 
     cursor: pointer;
+
+    max-width: 100%;
 }
 
 .btn-primary {
@@ -450,16 +481,21 @@ button {
 
     font-size: 13px;
     font-weight: 600;
+
+    max-width: 100%;
 }
 
 .hero-info i {
     color: var(--red);
 
     font-size: 18px;
+
+    flex-shrink: 0;
 }
 
 .hero-info small {
     color: #777;
+
     font-weight: 400;
 }
 
@@ -470,7 +506,10 @@ button {
     position: relative;
 
     display: flex;
+
     justify-content: center;
+
+    min-width: 0;
 }
 
 .hero-image-card {
@@ -492,7 +531,9 @@ button {
 }
 
 .hero-image-card img {
+    width: 100%;
     height: 100%;
+
     object-fit: cover;
 
     transition: 0.6s;
@@ -516,6 +557,8 @@ button {
 
     gap: 12px;
 
+    max-width: 90%;
+
     padding: 13px 18px;
 
     background: white;
@@ -535,6 +578,8 @@ button {
     align-items: center;
     justify-content: center;
 
+    flex-shrink: 0;
+
     background: var(--red-light);
     color: var(--red);
 
@@ -545,6 +590,8 @@ button {
     display: block;
 
     font-size: 13px;
+
+    overflow-wrap: break-word;
 }
 
 .floating-card small {
@@ -553,6 +600,8 @@ button {
     color: #777;
 
     font-size: 11px;
+
+    overflow-wrap: break-word;
 }
 
 @keyframes floating {
@@ -569,7 +618,7 @@ button {
 
 
 /* =========================
-   SECTIONS
+   SEÇÕES
 ========================= */
 
 .highlights,
@@ -603,6 +652,8 @@ button {
     color: var(--black);
 
     margin-bottom: 12px;
+
+    overflow-wrap: break-word;
 }
 
 .section-heading h2 span {
@@ -611,6 +662,8 @@ button {
 
 .section-heading p {
     color: #777;
+
+    overflow-wrap: break-word;
 }
 
 
@@ -631,6 +684,8 @@ button {
 }
 
 .highlight-card {
+    min-width: 0;
+
     padding: 28px 20px;
 
     background: white;
@@ -696,12 +751,16 @@ button {
     font-size: 16px;
 
     margin-bottom: 8px;
+
+    overflow-wrap: break-word;
 }
 
 .highlight-card p {
     color: #777;
 
     font-size: 12px;
+
+    overflow-wrap: break-word;
 }
 
 
@@ -741,6 +800,8 @@ button {
     cursor: pointer;
 
     transition: 0.3s;
+
+    white-space: nowrap;
 }
 
 .category:hover {
@@ -769,6 +830,8 @@ button {
 }
 
 .menu-card {
+    min-width: 0;
+
     overflow: hidden;
 
     background: white;
@@ -801,6 +864,7 @@ button {
 }
 
 .menu-image img {
+    width: 100%;
     height: 100%;
 
     object-fit: cover;
@@ -834,6 +898,8 @@ button {
 
 .menu-content {
     padding: 22px;
+
+    min-width: 0;
 }
 
 .menu-title {
@@ -844,10 +910,14 @@ button {
     gap: 10px;
 
     margin-bottom: 9px;
+
+    min-width: 0;
 }
 
 .menu-title h3 {
     font-size: 18px;
+
+    overflow-wrap: anywhere;
 }
 
 .price {
@@ -857,6 +927,8 @@ button {
     font-weight: 800;
 
     white-space: nowrap;
+
+    flex-shrink: 0;
 }
 
 .menu-content p {
@@ -867,12 +939,16 @@ button {
     min-height: 42px;
 
     margin-bottom: 17px;
+
+    overflow-wrap: anywhere;
 }
 
 .order-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    gap: 10px;
 
     padding-top: 15px;
 
@@ -913,6 +989,8 @@ button {
     color: #666;
 
     font-size: 14px;
+
+    overflow-wrap: break-word;
 }
 
 
@@ -936,6 +1014,8 @@ button {
 
 .about-image {
     position: relative;
+
+    min-width: 0;
 }
 
 .about-image > img {
@@ -963,6 +1043,8 @@ button {
     box-shadow: var(--shadow);
 
     text-align: center;
+
+    max-width: 90%;
 }
 
 .about-badge strong {
@@ -989,6 +1071,10 @@ button {
     font-size: 11px;
 }
 
+.about-content {
+    min-width: 0;
+}
+
 .about-content h2 {
     font-family: "Montserrat", sans-serif;
 
@@ -997,6 +1083,8 @@ button {
     line-height: 1.15;
 
     margin-bottom: 20px;
+
+    overflow-wrap: break-word;
 }
 
 .about-content h2 span {
@@ -1011,6 +1099,8 @@ button {
     margin-bottom: 15px;
 
     max-width: 570px;
+
+    overflow-wrap: break-word;
 }
 
 .about-features {
@@ -1033,6 +1123,8 @@ button {
 
     font-size: 13px;
     font-weight: 600;
+
+    min-width: 0;
 }
 
 .about-features i {
@@ -1042,6 +1134,8 @@ button {
 
     width: 22px;
     height: 22px;
+
+    flex-shrink: 0;
 
     background: #fff0f1;
 
@@ -1105,6 +1199,8 @@ button {
     color: #666;
 
     font-size: 14px;
+
+    overflow-wrap: break-word;
 }
 
 .rating-bar {
@@ -1125,7 +1221,6 @@ button {
     display: block;
 
     width: 92%;
-
     height: 100%;
 
     background: linear-gradient(
@@ -1162,12 +1257,18 @@ button {
     align-items: center;
 }
 
+.location-content {
+    min-width: 0;
+}
+
 .location-content h2 {
     font-family: "Montserrat", sans-serif;
 
     font-size: clamp(32px, 4vw, 46px);
 
     margin-bottom: 35px;
+
+    overflow-wrap: break-word;
 }
 
 .location-content h2 span {
@@ -1180,6 +1281,8 @@ button {
     gap: 15px;
 
     margin-bottom: 25px;
+
+    min-width: 0;
 }
 
 .contact-icon {
@@ -1211,6 +1314,8 @@ button {
     font-size: 13px;
 
     line-height: 1.7;
+
+    overflow-wrap: anywhere;
 }
 
 .map-container {
@@ -1223,6 +1328,8 @@ button {
     box-shadow: var(--shadow);
 
     border: 1px solid #eeeeee;
+
+    min-width: 0;
 }
 
 .map-container iframe {
@@ -1257,6 +1364,8 @@ button {
     justify-content: space-between;
 
     gap: 40px;
+
+    min-width: 0;
 }
 
 .cta-section .section-label {
@@ -1271,6 +1380,8 @@ button {
     font-size: clamp(27px, 4vw, 42px);
 
     line-height: 1.2;
+
+    overflow-wrap: break-word;
 }
 
 .cta-content h2 span {
@@ -1281,6 +1392,8 @@ button {
     margin-top: 10px;
 
     color: #ffe9eb;
+
+    overflow-wrap: break-word;
 }
 
 .btn-light {
@@ -1332,11 +1445,15 @@ button {
     color: #aaa;
 
     font-size: 13px;
+
+    overflow-wrap: break-word;
 }
 
 .footer-rating {
     display: flex;
     align-items: center;
+
+    flex-wrap: wrap;
 
     gap: 9px;
 
@@ -1399,12 +1516,16 @@ button {
     font-size: 13px;
 
     margin-bottom: 14px;
+
+    overflow-wrap: anywhere;
 }
 
 .footer-contact i {
     color: var(--red);
 
     margin-top: 4px;
+
+    flex-shrink: 0;
 }
 
 .footer-whatsapp {
@@ -1446,112 +1567,4 @@ button {
     align-items: center;
     justify-content: space-between;
 
-    gap: 20px;
-}
-
-.footer-bottom p {
-    color: #777;
-
-    font-size: 11px;
-}
-
-
-/* =========================
-   WHATSAPP FLUTUANTE
-========================= */
-
-.whatsapp-float {
-    position: fixed;
-
-    right: 22px;
-    bottom: 22px;
-
-    z-index: 999;
-
-    display: flex;
-    align-items: center;
-
-    gap: 9px;
-
-    padding: 13px 17px;
-
-    background: #25d366;
-
-    color: white;
-
-    border-radius: 40px;
-
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
-
-    font-size: 13px;
-    font-weight: 700;
-
-    transition: 0.3s;
-}
-
-.whatsapp-float i {
-    font-size: 22px;
-}
-
-.whatsapp-float:hover {
-    transform: translateY(-4px);
-
-    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
-}
-
-
-/* =========================
-   ANIMAÇÕES
-========================= */
-
-.highlight-card,
-.menu-card,
-.about-image,
-.about-content,
-.rating-box,
-.location-content,
-.map-container {
-    animation: fadeUp 0.8s ease both;
-}
-
-@keyframes fadeUp {
-
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 1500px) {
-
-    .nav {
-        gap: 15px;
-    }
-
-    .nav a {
-        font-size: 12px;
-    }
-
-    .highlight-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .hero-content {
-        gap: 40px;
-    }
-
-}
-
-
-/* ======================
+    gap:
