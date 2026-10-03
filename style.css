@@ -1533,7 +1533,7 @@ button {
    TABLET
 ========================= */
 
-@media (max-width: 1050px) {
+@media (max-width: 1500px) {
 
     .nav {
         gap: 15px;
@@ -1552,23 +1552,6 @@ button {
     }
 
 }
-/* CORREÇÃO DO ESPAÇO BRANCO NO CELULAR */
-@media (max-width: 768px) {
-    html,
-    body {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-    }
 
-    .container,
-    section,
-    .hero {
-        width: 100%;
-        max-width: 100%;
-    }
-}
 
 /* ======================
