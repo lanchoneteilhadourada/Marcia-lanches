@@ -1,104 +1,333 @@
+/* ==============================
+   CONFIGURAÇÃO GERAL
+============================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #111;
-    color: #fff;
+html {
+    scroll-behavior: smooth;
 }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #111111;
+    line-height: 1.5;
+}
+
+/* ==============================
+   CABEÇALHO
+============================== */
 
 header {
-    background: #ffc107;
-    color: #111;
-    padding: 20px;
+    background: #ffffff;
     text-align: center;
+    padding: 35px 20px 25px;
+    border-bottom: 6px solid #ffc107;
 }
 
+header h1 {
+    font-size: 48px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #111111;
+}
+
+header p {
+    margin-top: 8px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #e30613;
+}
+
+/* ==============================
+   MENU DE NAVEGAÇÃO
+============================== */
+
 nav {
+    background: #ffffff;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 15px;
-    background: #222;
+    align-items: center;
+    gap: 25px;
+    padding: 18px;
+    border-bottom: 2px solid #eeeeee;
 }
 
 nav a {
-    color: #fff;
+    color: #111111;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 nav a:hover {
-    color: #ffc107;
+    color: #e30613;
 }
 
+/* ==============================
+   TÍTULO PRINCIPAL
+============================== */
+
 .hero {
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #ffffff;
     text-align: center;
-    padding: 30px;
+    padding: 45px 20px 30px;
 }
 
 .hero h1 {
-    font-size: 45px;
-    color: #ffc107;
+    color: #111111;
+    font-size: 52px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 7px;
+    background: #ffc107;
+    margin: 12px auto;
+    border-radius: 10px;
 }
 
 .hero p {
-    margin: 15px 0;
+    color: #444444;
     font-size: 18px;
+    font-weight: 600;
 }
 
-button {
-    background: #ffc107;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-button:hover {
-    background: #e0a800;
-}
+/* ==============================
+   CARDÁPIO
+============================== */
 
 section {
-    padding: 40px 20px;
-    text-align: center;
+    background: #ffffff;
+    padding: 30px 20px;
 }
+
+section h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: #111111;
+}
+
+/* DUAS COLUNAS */
+
+.cardapio {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+/* ==============================
+   PRODUTOS
+============================== */
 
 .card {
-    background: #222;
-    padding: 20px;
-    margin: 15px auto;
-    max-width: 350px;
-    border-radius: 12px;
+    background: #ffffff;
+    border: 3px solid #ffc107;
+    border-radius: 14px;
+    padding: 22px;
+    position: relative;
+    transition: 0.3s ease;
 }
 
-.card h2 {
-    color: #ffc107;
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+    color: #111111;
+    font-size: 23px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #444444;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+/* ==============================
+   PREÇOS
+============================== */
+
+.preco {
+    color: #e30613;
+    font-size: 26px;
+    font-weight: 900;
+    display: block;
+    margin-top: 10px;
+}
+
+/* ==============================
+   DESTAQUE AMARELO
+============================== */
+
+.destaque {
+    display: inline-block;
+    background: #ffc107;
+    color: #111111;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
     margin-bottom: 10px;
 }
 
-footer {
-    background: #000;
-    padding: 25px;
-    text-align: center;
+/* ==============================
+   ADICIONAIS
+============================== */
+
+.adicionais {
+    max-width: 1100px;
+    margin: 35px auto;
+    background: #ffffff;
+    border: 3px solid #111111;
+    border-top: 8px solid #ffc107;
+    border-radius: 14px;
+    padding: 30px;
 }
 
-@media (max-width: 600px) {
+.adicionais h2 {
+    color: #111111;
+    margin-bottom: 20px;
+}
+
+.adicionais ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.adicionais li {
+    color: #111111;
+    font-weight: 700;
+    border-bottom: 2px solid #eeeeee;
+    padding: 10px;
+}
+
+.adicionais li span {
+    color: #e30613;
+    font-weight: 900;
+}
+
+/* ==============================
+   BOTÕES
+============================== */
+
+button {
+    background: #ffc107;
+    color: #111111;
+    border: 2px solid #111111;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-weight: 900;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #e30613;
+    color: #ffffff;
+}
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+footer {
+    background: #ffffff;
+    color: #111111;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    border-top: 6px solid #ffc107;
+}
+
+footer p {
+    font-weight: 600;
+}
+
+footer strong {
+    color: #e30613;
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 750px) {
+
+    header h1 {
+        font-size: 35px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .cardapio {
+        grid-template-columns: 1fr;
+    }
+
+    .adicionais ul {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    section {
+        padding: 25px 15px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    header h1 {
+        font-size: 29px;
+    }
+
     .hero h1 {
         font-size: 32px;
     }
 
-    nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+    .hero p {
+        font-size: 15px;
     }
-}
+
+    .card {
+        padding: 17px;
+    }
+
+    .card h3 {
+        font-size: 20px;
+    }
+
+    .preco {
+        font-size: 23px;
+    }
+    }
