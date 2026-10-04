@@ -1,45 +1,136 @@
-document.addEventListener("DOMContentLoaded", function() {
+// ==============================
+// INICIALIZAÇÃO
+// ==============================
 
-    const botoes = document.querySelectorAll("button");
+document.addEventListener("DOMContentLoaded", () => {
 
-    botoes.forEach(function(botao) {
-        botao.addEventListener("click", function() {
-            console.log("Botão clicado!");
-        });
-    });
+    console.log("Menu Hamburguer carregado!");
 
-    const links = document.querySelectorAll("nav a");
+    configurarRolagem();
+    configurarBotoes();
+    configurarAnimacoes();
+    configurarCategorias();
 
-    links.forEach(function(link) {
+});
+
+// ==============================
+// ROLAGEM SUAVE
+// ==============================
+
+function configurarRolagem() {
+
+    const links = document.querySelectorAll('a[href^="#"]');
+
+    links.forEach(link => {
+
         link.addEventListener("click", function(event) {
-            const destino = link.getAttribute("href");
 
-            if (destino && destino.startsWith("#")) {
+            const destino = this.getAttribute("href");
+            const elemento = document.querySelector(destino);
+
+            if (elemento) {
+
                 event.preventDefault();
 
-                const secao = document.querySelector(destino);
-
-                if (secao) {
-                    secao.scrollIntoView({
-                        behavior: "smooth"
-                    });
-                }
+                elemento.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
             }
         });
     });
+}
 
-    const titulo = document.querySelector(".hero h1");
+// ==============================
+// BOTÕES
+// ==============================
 
-    if (titulo) {
-        titulo.addEventListener("mouseenter", function() {
-            titulo.style.transform = "scale(1.03)";
+function configurarBotoes() {
+
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach(botao => {
+
+        botao.addEventListener("click", () => {
+
+            botao.style.transform = "scale(0.96)";
+
+            setTimeout(() => {
+                botao.style.transform = "scale(1)";
+            }, 120);
+
+        });
+    });
+}
+
+// ==============================
+// ANIMAÇÕES DOS PRODUTOS
+// ==============================
+
+function configurarAnimacoes() {
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        card.addEventListener("mouseenter", () => {
+            card.style.transition = "0.3s";
         });
 
-        titulo.addEventListener("mouseleave", function() {
-            titulo.style.transform = "scale(1)";
+        card.addEventListener("mouseleave", () => {
+            card.style.transition = "0.3s";
         });
+    });
+}
+
+// ==============================
+// FILTRO DE CATEGORIAS
+// ==============================
+
+function configurarCategorias() {
+
+    const categorias = document.querySelectorAll(".category");
+    const produtos = document.querySelectorAll(".card");
+
+    categorias.forEach(botao => {
+
+        botao.addEventListener("click", () => {
+
+            const categoria = botao.dataset.category;
+
+            categorias.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            botao.classList.add("active");
+
+            produtos.forEach(produto => {
+
+                const tipo = produto.dataset.category;
+
+                if (categoria === "todos" || tipo === categoria) {
+                    produto.style.display = "block";
+                } else {
+                    produto.style.display = "none";
+                }
+
+            });
+        });
+    });
+}
+
+// ==============================
+// VOLTAR AO TOPO
+// ==============================
+
+window.addEventListener("scroll", () => {
+
+    const distancia = window.scrollY;
+
+    if (distancia > 300) {
+        document.body.classList.add("rolando");
+    } else {
+        document.body.classList.remove("rolando");
     }
-
-    console.log("Site carregado com sucesso!");
 
 });
