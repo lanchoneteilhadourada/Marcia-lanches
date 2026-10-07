@@ -1305,7 +1305,7 @@ img {
   }
 .menu-image img {
     width: 100%;
-    height: auto;
-    max-height: 220px;
+    height: 100%;
     object-fit: contain;
+    padding: 10px;
 }
