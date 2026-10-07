@@ -1304,7 +1304,8 @@ img {
 
   }
 .menu-image img {
-    width: 120%;
-    height: 200%;
+    width: 140%;
+    max-width: none;
+    height: auto;
     object-fit: contain;
 }
