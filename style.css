@@ -1303,3 +1303,6 @@ img {
     }
 
   }
+.coca-card .menu-info {
+    display: none;
+}
