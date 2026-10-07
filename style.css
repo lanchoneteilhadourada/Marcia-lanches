@@ -1305,6 +1305,6 @@ img {
   }
 .menu-image img {
     width: 120%;
-    height: 120%;
+    height: 200%;
     object-fit: contain;
 }
